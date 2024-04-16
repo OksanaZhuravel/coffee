@@ -9,7 +9,7 @@ export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 	return (
-		<header className={`${styles.header} text`}>
+		<header className={`${styles.header}`}>
 			<div className={`${styles.container} ${isMenuOpen ? styles.open : ''}`}>
 				<div className={styles.inner}>
 					<Logo setIsMenuOpen={setIsMenuOpen} />

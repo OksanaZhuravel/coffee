@@ -5,3 +5,9 @@ export const inter = Inter({
 	subsets: ['latin'],
 	display: 'swap',
 })
+
+export const interRegular = Inter({
+	weight: ['400'],
+	subsets: ['latin'],
+	display: 'swap',
+})

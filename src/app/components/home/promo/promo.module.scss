@@ -1,0 +1,77 @@
+@import './../../../styles/variables';
+.promo {
+	position: relative;
+	padding-bottom: 100px;
+}
+.container {
+	display: flex;
+	color: var(--text-light);
+}
+.fon {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: -1;
+}
+.img {
+	border-radius: var(--border-radius);
+	width: 100%;
+	height: auto;
+	max-height: 644px;
+}
+.body {
+	padding: 100px;
+	display: grid;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 40px;
+}
+.heading {
+	max-width: 530px;
+}
+.accent {
+	color: var(--text-accent);
+}
+.text {
+	max-width: 530px;
+}
+
+.button {
+	color: var(--text-dark);
+	background-color: var(--text-light);
+	border-radius: var(--border-radius);
+	padding: 20px 0;
+	max-width: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	& span {
+		transition: transform 0.6s ease;
+	}
+
+	&:hover {
+		& .svg {
+			opacity: 1;
+			visibility: visible;
+		}
+		& span {
+			transform: translateX(-8px);
+		}
+	}
+}
+
+.svg {
+	opacity: 0;
+	visibility: hidden;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 47%;
+	right: -8px;
+	transform: translate(-66px, -50%);
+	transition: all 0.6s ease;
+}
