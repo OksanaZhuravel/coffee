@@ -1,0 +1,105 @@
+@import './../../styles/variables';
+.container {
+	color: var(--text-light);
+}
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	padding: 60px 16px;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: var(--background-container);
+	border-radius: var(--border-radius);
+	@media (min-width: $mobile) {
+		padding: 100px 60px;
+		gap: 100px;
+	}
+	@media (min-width: $tablet) {
+		padding: 100px;
+		flex-direction: row;
+	}
+}
+.social {
+	display: grid;
+	gap: 40px;
+	@media (min-width: $tablet) {
+		min-width: 530px;
+	}
+}
+.title {
+	@media (min-width: $tablet) {
+		max-width: 530px;
+	}
+}
+.accent {
+	color: var(--text-accent);
+}
+.list {
+	display: flex;
+	gap: 12px;
+}
+.link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	width: 60px;
+	border: 1px solid var(--border-light);
+	border-radius: 50%;
+	transition: background-color 0.6s ease 0s, border-color 0.6s ease 0s;
+	svg path {
+		transition: stroke 0.6s ease 0s;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--text-light);
+			border-color: transparent;
+			svg path {
+				stroke: var(--text-dark);
+			}
+		}
+	}
+}
+
+.contact {
+	width: 100%;
+	display: grid;
+	gap: 40px;
+}
+.subtitle {
+	text-align: left;
+}
+.lists {
+	display: grid;
+	gap: 16px;
+}
+.item {
+	display: flex;
+}
+.inner {
+	transition: all 0.6s ease 0s;
+	position: relative;
+	span {
+		margin-left: 8px;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -4px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: transparent;
+		transition: all 0.6s ease 0s;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			&::after {
+				content: '';
+				background-color: var(--text-light);
+			}
+		}
+	}
+}
