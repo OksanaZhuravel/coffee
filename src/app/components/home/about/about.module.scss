@@ -1,0 +1,29 @@
+@import './../../../styles/variables';
+
+.about {
+	padding-bottom: 100px;
+}
+.container {
+	display: grid;
+	row-gap: 40px;
+}
+
+.body {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 40px;
+}
+.column {
+	display: grid;
+	row-gap: 40px;
+}
+.title {
+	width: 100%;
+}
+.accent {
+	color: var(--text-accent);
+}
+.img {
+	object-fit: cover;
+	border-radius: 20px;
+}

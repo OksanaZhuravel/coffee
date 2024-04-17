@@ -1,5 +1,5 @@
 'use client'
-import Logo from '@/components/header/Logo/Logo'
+import Logo from '@/components/header/logo/Logo'
 import styles from './header.module.scss'
 
 import NavBar from '@/components/header/navBarAll/NavBar'
