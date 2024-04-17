@@ -44,11 +44,11 @@
 .heading {
 	font-size: 42px;
 	line-height: 115%;
-	font-weight: 600;
+	// font-weight: 600;
 	&.accent {
 		font-style: italic;
 	}
-	@media (min-width: $tablet) {
+	@media (min-width: $mobile) {
 		font-size: 72px;
 		line-height: 105%;
 	}
@@ -56,7 +56,7 @@
 .title {
 	font-size: 32px;
 	line-height: 125%;
-	font-weight: 600;
+	// font-weight: 600;
 	& .accent {
 		font-style: italic;
 	}
@@ -67,7 +67,7 @@
 .subtitle {
 	font-size: 24px;
 	line-height: 125%;
-	font-weight: 600;
+	// font-weight: 600;
 }
 .text {
 	font-size: 16px;
@@ -77,13 +77,17 @@
 .text-small {
 	font-size: 10px;
 	line-height: 140%;
-	font-weight: 600;
+	// font-weight: 600;
 }
-
+.text-link {
+	font-size: 16px;
+	line-height: 125%;
+	// font-weight: 600;
+}
 .text-burger {
 	font-size: 32px;
 	line-height: 125%;
-	font-weight: 600;
+	// font-weight: 600;
 	@media (min-width: $mobile) {
 		font-size: 16px;
 	}

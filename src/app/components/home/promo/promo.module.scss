@@ -19,14 +19,25 @@
 	border-radius: var(--border-radius);
 	width: 100%;
 	height: auto;
+	min-height: 552px;
 	max-height: 644px;
+	object-fit: cover;
+	@media (min-width: $mobile) {
+		min-height: 644px;
+	}
 }
 .body {
-	padding: 100px;
+	padding: 60px 16px;
 	display: grid;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 40px;
+	@media (min-width: $mobile) {
+		padding: 100px 60px;
+	}
+	@media (min-width: $tablet) {
+		padding: 100px;
+	}
 }
 .heading {
 	max-width: 530px;

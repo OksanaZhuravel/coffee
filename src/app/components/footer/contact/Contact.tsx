@@ -1,5 +1,5 @@
-import styles from '@/components/footer/footer.module.scss'
 import Image from 'next/image'
+import styles from '../footer.module.scss'
 
 const contactList = [
 	{
@@ -21,7 +21,7 @@ const contactList = [
 export default function Contact() {
 	return (
 		<>
-			<h3 id='Contacts' className={`${styles.subtitle} subtitle`}>
+			<h3 id='contacts' className={`${styles.subtitle} subtitle`}>
 				Contacts
 			</h3>
 			<ul className={styles.lists}>

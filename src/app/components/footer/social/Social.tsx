@@ -1,8 +1,8 @@
-import styles from '@/components/footer/footer.module.scss'
 import FacebookIcon from '@/components/footer/social/icon/facebook'
 import InstagramIcon from '@/components/footer/social/icon/instagram'
 import TwitterIcon from '@/components/footer/social/icon/twitter'
 import Link from 'next/link'
+import styles from '../footer.module.scss'
 
 const socialLinks = [
 	{

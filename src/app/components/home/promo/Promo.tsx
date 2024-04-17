@@ -29,7 +29,7 @@ export default function Promo() {
 						beverage.
 					</p>
 					<Link className={styles.button} href={'/menu'}>
-						<span className='text-burger'>Menu</span>
+						<span className='text-link'>Menu</span>
 						<Image
 							className={styles.svg}
 							src='/image/coffee-cup.svg'

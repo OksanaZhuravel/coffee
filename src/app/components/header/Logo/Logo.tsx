@@ -1,10 +1,8 @@
-import styles from '@/components/header/header.module.scss'
+import { LogoProps } from '@/components/interface/interface'
 import Image from 'next/image'
 import Link from 'next/link'
+import styles from './../header.module.scss'
 
-interface LogoProps {
-	setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
 export default function Logo({ setIsMenuOpen }: LogoProps) {
 	return (
 		<Link
