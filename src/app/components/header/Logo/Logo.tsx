@@ -1,6 +1,6 @@
-import { LogoProps } from '@/components/interface/interface'
 import Image from 'next/image'
 import Link from 'next/link'
+import { LogoProps } from './../../interface/interface'
 import styles from './../header.module.scss'
 
 export default function Logo({ setIsMenuOpen }: LogoProps) {
