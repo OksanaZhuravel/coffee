@@ -12,12 +12,12 @@ export default function NavBar({ setIsMenuOpen }: NavBarProps) {
 	return (
 		<nav className={`${styles.navbar}`}>
 			<Link
-				href={'/menu'}
+				href={'/menu/coffee'}
 				onClick={() => {
 					setIsMenuOpen(false)
 				}}
 				className={clsx(styles.btn, {
-					[styles.active]: path === '/menu',
+					[styles.active]: path === '/menu/coffee',
 				})}
 			>
 				<span className='text-burger'>Menu</span>

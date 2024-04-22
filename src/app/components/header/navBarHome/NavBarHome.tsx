@@ -55,9 +55,9 @@ export default function NavBarHome({ setIsMenuOpen }: NavBarProps) {
 				))}
 			</ul>
 			<Link
-				href={'/menu'}
+				href={'/menu/coffee'}
 				className={clsx(styles.btn, {
-					[styles.active]: path === '/menu',
+					[styles.active]: path === '/menu/coffee',
 				})}
 			>
 				<span className='text-burger'>Menu</span>

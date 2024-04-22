@@ -28,7 +28,7 @@ export default function Promo() {
 						those seeking a warm and inviting space to enjoy their favorite
 						beverage.
 					</p>
-					<Link className={styles.button} href={'/menu'}>
+					<Link className={styles.button} href={'/menu/coffee'}>
 						<span className='text-link'>Menu</span>
 						<Image
 							className={styles.svg}

@@ -1,12 +1,11 @@
-@import './styles/root';
-@import './styles/variables';
-@import './styles/null';
+@import './root';
+@import './variables';
+@import './null';
 
-// @media (prefers-color-scheme: dark) {
-// 	html {
-// 		color-scheme: dark;
-// 	}
-// }
+body {
+	color: var(--text-dark);
+	background-color: var(--text-light);
+}
 
 .wrapper {
 	min-height: 100%;

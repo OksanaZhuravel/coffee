@@ -1,8 +1,9 @@
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/header/Header'
 import { inter } from '@/fonts'
-import '@/globals.scss'
 import type { Metadata } from 'next'
+import './styles/globals.scss'
+
 export const metadata: Metadata = {
 	title: 'Coffee House',
 	description: 'Enjoy premium coffee at our charming cafe',
@@ -18,7 +19,7 @@ export default function RootLayout({
 			<body>
 				<div className='wrapper'>
 					<Header />
-					{children}
+					<main>{children}</main>
 					<Footer />
 				</div>
 			</body>
