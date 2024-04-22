@@ -25,7 +25,10 @@
 }
 .column {
 	display: grid;
-	row-gap: 40px;
+
+	@media (min-width: $tablet) {
+		row-gap: 40px;
+	}
 }
 .box {
 	overflow: hidden;
