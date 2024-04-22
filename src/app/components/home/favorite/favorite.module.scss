@@ -1,0 +1,45 @@
+@import './../../../styles/variables';
+
+.favorite {
+	padding-bottom: 100px;
+	position: relative;
+}
+.container {
+	width: 100%;
+}
+.title {
+	text-align: center;
+	&:not(:last-child) {
+		padding-bottom: 40px;
+	}
+}
+.accent {
+	color: var(--text-accent);
+}
+
+.article {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
+	gap: 20px;
+}
+.img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	max-width: 480px;
+	max-height: 480px;
+}
+.box {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	gap: 16px;
+	max-width: 480px;
+}
+
+.text,
+.textbox {
+	text-align: center;
+}

@@ -88,7 +88,7 @@ export default function About() {
 				<h2 className={`${styles.title} title`}>
 					Resource is
 					<span className={`${styles.accent} accent`}>
-						&nbsp; the perfect and cozy place &nbsp;
+						&nbsp;the perfect and cozy place&nbsp;
 					</span>
 					where you can enjoy a variety of coffee beverages, to relax, catch up
 					with friends, or get some work done.
