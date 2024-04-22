@@ -22,6 +22,9 @@
 	min-height: 552px;
 	max-height: 644px;
 	object-fit: cover;
+	@media (min-width: $mobileSmall) {
+		min-height: 460px;
+	}
 	@media (min-width: $mobile) {
 		min-height: 644px;
 	}

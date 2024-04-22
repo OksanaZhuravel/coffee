@@ -97,14 +97,17 @@ export default function About() {
 					{Object.keys(imagesByColumn).map((key) => (
 						<div key={key} className={styles.column}>
 							{imagesByColumn[parseInt(key, 10)].map((image) => (
-								<Image
-									key={image.id}
-									className={styles.img}
-									alt={image.alt}
-									src={image.src}
-									width={image.width}
-									height={image.height}
-								/>
+								<div className={styles.box} key={image.id}>
+									<Image
+										className={`${styles.img} ${
+											image.height <= 589 ? styles.small : ''
+										}`}
+										alt={image.alt}
+										src={image.src}
+										width={image.width}
+										height={image.height}
+									/>
+								</div>
 							))}
 						</div>
 					))}

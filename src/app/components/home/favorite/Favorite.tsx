@@ -67,8 +67,6 @@ export default function Favorite() {
 					}}
 					pagination={{ clickable: true }}
 					centeredSlides={true}
-					onSwiper={(swiper) => console.log(swiper)}
-					onSlideChange={() => console.log('slide change')}
 				>
 					{favoriteImages.map((image) => (
 						<SwiperSlide key={image.id} className={styles.article}>
