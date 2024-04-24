@@ -1,11 +1,11 @@
 'use client'
-import { NavBarProps } from '@/components/interface/interface'
+import styles from '@/components/header/header.module.scss'
+import { NavBarProps } from '@/interface/interface'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import styles from './../header.module.scss'
 
 const menuLinks = [
 	{ id: 1, link: '/#favorite', text: 'Favorite coffee' },

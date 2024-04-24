@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '../footer.module.scss'
+import styles from '@/components/footer/footer.module.scss'
 
 const contactList = [
 	{

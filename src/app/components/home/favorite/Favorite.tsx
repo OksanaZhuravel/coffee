@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import '../../../styles/swiper.scss'
 import styles from './favorite.module.scss'
 
 const formatter = new Intl.NumberFormat('en-US', {

@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+.card {
+	max-width: 310px;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
+	gap: 20px;
+	border: 1px solid var(--border-light);
+	border-radius: var(--border-radius);
+	overflow: hidden;
+}
+.img {
+	object-fit: cover;
+	border-radius: var(--border-radius);
+	transition: all 0.6s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+.body {
+	display: grid;
+	justify-items: flex-start;
+	align-items: center;
+	gap: 12px;
+	padding: 20px;
+}
+
+.text {
+	text-align: left;
+}

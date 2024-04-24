@@ -1,6 +1,6 @@
 import Contact from '@/components/footer/contact/Contact'
+import styles from '@/components/footer/footer.module.scss'
 import Social from '@/components/footer/social/Social'
-import styles from './footer.module.scss'
 
 export default function Footer() {
 	return (
