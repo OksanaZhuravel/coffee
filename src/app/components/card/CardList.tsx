@@ -10,7 +10,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 	currency: 'USD',
 })
 
-export default function Card() {
+export default function CardList() {
 	const [isModalOpen, setModalOpen] = useState(false)
 	const handleOpenModal = () => {
 		setModalOpen(true)

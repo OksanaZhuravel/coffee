@@ -1,3 +1,3 @@
-export default function Teapage() {
+export default function TeaPage() {
 	return <div>Tea</div>
 }

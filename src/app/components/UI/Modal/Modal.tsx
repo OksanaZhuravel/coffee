@@ -1,4 +1,5 @@
 import { ReactNode, useEffect, useState } from 'react'
+import { IoIosInformationCircleOutline } from 'react-icons/io'
 import styles from './modal.module.scss'
 export interface ModalProps {
 	open: boolean
@@ -49,16 +50,20 @@ const Modal: React.FC<ModalProps> = ({ open, onCancel, children }) => {
 	return (
 		<div className={generateClassName(open)}>
 			<div className={styles.wrapper}>
-				<div className={styles.content}>{children}</div>
-
-				<p>
-					The cost is approximate, download our mobile application to place an
-					order. Collect points on your loyalty card and enjoy your favorite
-					coffee with up to 20% discount.
-				</p>
-				<span className='close' onClick={handleCancel}>
-					&times;
-				</span>
+				<div className={styles.content}>
+					{children}
+					<div className={styles.caption}>
+						<IoIosInformationCircleOutline size={16} />
+						<p className='text-small'>
+							The cost is approximate, download our mobile application to place
+							an order. Collect points on your loyalty card and enjoy your
+							favorite coffee with up to 20% discount.
+						</p>
+						<span className={`${styles.button} text`} onClick={handleCancel}>
+							Close
+						</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	)

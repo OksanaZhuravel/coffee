@@ -1,6 +1,6 @@
-import Card from '@/components/card/Card'
+import Card from '@/components/card/CardList'
 
-export default function Coffeepage() {
+export default function CoffeePage() {
 	return (
 		<div
 			className='container'
