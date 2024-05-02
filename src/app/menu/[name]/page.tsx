@@ -10,9 +10,16 @@ export default function MenuPage({ params }: { params: { name: string } }) {
 	const [loading, setLoading] = useState(true)
 	const { name } = params
 	// console.log(name)
+	let apiUrl
+
+	if (process.env.VERCEL_ENV === 'production') {
+		apiUrl = process.env.NEXT_PUBLIC_API_URL
+	} else {
+		apiUrl = process.env.NEXT_API_URL || 'http://localhost:3000'
+	}
 
 	useEffect(() => {
-		fetch(`/api/menu/${name}`, {
+		fetch(`${apiUrl}/api/menu/${name}`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
