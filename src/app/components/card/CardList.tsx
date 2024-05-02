@@ -3,7 +3,7 @@ import Modal from '@/components/UI/Modal/Modal'
 import CardItem from '@/components/card/CardItem'
 import styles from '@/components/card/card.module.scss'
 import { inter, interRegular } from '@/fonts'
-import { CardProps } from '@/interface/interface'
+import { CardProps, ItemProps } from '@/interface/interface'
 import Image from 'next/image'
 import { useState } from 'react'
 const formatter = new Intl.NumberFormat('en-US', {
@@ -13,20 +13,26 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 export default function CardList({ items }: CardProps) {
 	const [isModalOpen, setModalOpen] = useState(false)
-	const handleOpenModal = () => {
+	const [selectedItem, setSelectedItem] = useState<ItemProps | null>(null)
+	const handleOpenModal = (item: ItemProps) => {
+		setSelectedItem(item)
 		setModalOpen(true)
-		console.log('handleOpenModal')
+		// console.log('handleOpenModal')
 	}
 
 	const handleCloseModal = () => {
 		setModalOpen(false)
-		console.log('handleCloseModal')
+		// console.log('handleCloseModal')
 	}
 
 	return (
 		<>
 			{items.map((el) => (
-				<article className={styles.card} onClick={handleOpenModal} key={el.id}>
+				<article
+					className={styles.card}
+					onClick={() => handleOpenModal(el)}
+					key={el.id}
+				>
 					<Image
 						className={styles.img}
 						alt={el.title}
@@ -49,7 +55,7 @@ export default function CardList({ items }: CardProps) {
 			))}
 
 			<Modal open={isModalOpen} onCancel={handleCloseModal}>
-				<CardItem items={items} />
+				{selectedItem && <CardItem item={selectedItem} />}
 			</Modal>
 		</>
 	)

@@ -1,44 +1,73 @@
-import Input from '@/components/UI/Input/Input'
 import styles from '@/components/card/card.module.scss'
 import { interRegular } from '@/fonts'
-import { CardProps } from '@/interface/interface'
-export default function CardItem({ items }: CardProps) {
-	console.log(items)
+import { ItemProps } from '@/interface/interface'
+import Image from 'next/image'
+import Input from '../UI/Input/Input'
+
+export default function CardItem({ item }: { item: ItemProps }) {
+	// console.log(item)
 
 	return (
-		<article className={styles.box}>
-			<h3 className={`${styles.subtitle} subtitle`}>Irish coffee</h3>
-			<p className={`${interRegular.className} ${styles.text} text`}>
-				Fragrant black coffee with Jameson Irish whiskey and whipped milk
-			</p>
-			Card
-			<form action='#' className='product__form'>
-				<div className='product__size size'>
-					<p className='subtitle-h4'>Size</p>
-					<div className='size__options'>
-						<div
-							// key={size}
-							onClick={() => console.log('click')}
-						>
-							<Input
-								className='size__input'
-								type='radio'
-								// value={size}
-								// id={size}
-								name='size'
-								// checked={selectedSize === size}
-								onChange={() => console.log('click size')}
-							/>
-							<label
-								// htmlFor={size}
-								className='size__label'
-							>
-								<span className='text'>200 ml</span>
-							</label>
+		<article className={styles.wrap}>
+			<Image
+				className={styles.img}
+				alt={item.title}
+				src={item.src}
+				width={310}
+				height={310}
+			/>
+			<div className={`${styles.inner}`}>
+				<h3 className={`${styles.subtitle} subtitle`}>{item.title}</h3>
+				<p className={`${interRegular.className} ${styles.text} text`}>
+					{item.text}
+				</p>
+				<form action='#' className={styles.form}>
+					<div className={styles.size}>
+						<p className={`${interRegular.className}text`}>Size</p>
+						<div className={styles.options}>
+							{item.sizes.map((size) => (
+								<div key={size.id} onClick={() => console.log('click')}>
+									<Input
+										className={styles.input}
+										type='radio'
+										value={size.text}
+										id={size.text}
+										name='size'
+										// checked={selectedSize === size}
+										// onChange={() => console.log('click size')}
+										placeholder={size.text}
+									/>
+									<label htmlFor={size.text} className={styles.label}>
+										<span className='text'>{size.text}</span>
+										<span className='text'>{size.count}</span>
+										<span className='text'>{size.units}</span>
+									</label>
+								</div>
+							))}
+						</div>
+						<div className={styles.options}>
+							{item.additives.map((additive, index) => (
+								<div key={additive.id} onClick={() => console.log('click')}>
+									<Input
+										className={styles.input}
+										type='checkbox'
+										value={additive.text}
+										id={additive.text}
+										name='additive'
+										// checked={selectedSize === size}
+										// onChange={() => console.log('click size')}
+										placeholder={additive.text}
+									/>
+									<label htmlFor={additive.text} className={styles.label}>
+										<span className='text'>{index + 1}</span>
+										<span className='text'>{additive.text}</span>
+									</label>
+								</div>
+							))}
 						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</article>
 	)
 }

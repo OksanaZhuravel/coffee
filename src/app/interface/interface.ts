@@ -15,16 +15,7 @@ export interface Additive {
 	id: number
 	text: string
 }
-// export interface CardProps {
-// 	id: number
-// 	name: string
-// 	src: string
-// 	title: string
-// 	text: string
-// 	price: number
-// 	size: Size[]
-// 	additives: Additive[]
-// }
+
 export interface ItemProps {
 	id: number
 	name: string
@@ -32,7 +23,20 @@ export interface ItemProps {
 	title: string
 	text: string
 	price: number
+	sizes: Size[]
+	additives: Additive[]
 }
 export interface CardProps {
 	items: ItemProps[]
 }
+
+// export interface ItemsProps {
+// 	id: number
+// 	name: string
+// 	src: string
+// 	title: string
+// 	text: string
+// 	price: number
+// size: Size[]
+// additives: Additive[]
+// }

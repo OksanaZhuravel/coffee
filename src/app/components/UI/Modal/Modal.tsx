@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from 'react'
+import Head from 'next/head'
+import { ReactNode, useEffect } from 'react'
 import { IoIosInformationCircleOutline } from 'react-icons/io'
 import styles from './modal.module.scss'
 export interface ModalProps {
@@ -6,29 +7,30 @@ export interface ModalProps {
 	onCancel: () => void
 	children: ReactNode
 }
-
-const generateClassName = (open: boolean) => {
-	return open ? `${styles.modal} ${styles.modal_show}` : styles.modal
-}
-
-const Modal: React.FC<ModalProps> = ({ open, onCancel, children }) => {
-	const [isModalOpen, setModalOpen] = useState(open)
-
+const Modal: React.FC<ModalProps> = ({ open, children, onCancel }) => {
 	useEffect(() => {
-		setModalOpen(open)
+		if (open) {
+			document.body.classList.add('modal__show')
+		} else {
+			document.body.classList.remove('modal__show')
+		}
+		return () => {
+			document.body.classList.remove('modal__show')
+		}
 	}, [open])
-
 	const handleCancel = () => {
-		setModalOpen(false)
-		onCancel && onCancel()
-		console.log('handleCancel')
+		onCancel()
 	}
+
 	const handleOutsideClick = (e: MouseEvent) => {
-		e.target
-		if (e.target instanceof Element && !e.target.closest(`${styles.content}`)) {
+		if (
+			!(e.target instanceof Element) ||
+			e.target.closest(`.${styles.wrapper}`) === null
+		) {
 			handleCancel()
 		}
 	}
+
 	const handleKeyUp = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
 			handleCancel()
@@ -36,36 +38,41 @@ const Modal: React.FC<ModalProps> = ({ open, onCancel, children }) => {
 	}
 
 	useEffect(() => {
-		document.addEventListener('mousedown', handleOutsideClick)
-		document.addEventListener('keyup', handleKeyUp)
+		if (typeof window !== 'undefined') {
+			document.addEventListener('mousedown', handleOutsideClick)
+			document.addEventListener('keyup', handleKeyUp)
+		}
 		return () => {
-			document.removeEventListener('mousedown', handleOutsideClick)
-			document.removeEventListener('keyup', handleKeyUp)
+			if (typeof window !== 'undefined') {
+				document.removeEventListener('mousedown', handleOutsideClick)
+				document.removeEventListener('keyup', handleKeyUp)
+			}
 		}
 	}, [])
-	useEffect(() => {
-		document.body.classList.toggle('modal__show', open)
-	}, [open, onCancel])
-
 	return (
-		<div className={generateClassName(open)}>
-			<div className={styles.wrapper}>
-				<div className={styles.content}>
-					{children}
-					<div className={styles.caption}>
-						<IoIosInformationCircleOutline size={16} />
-						<p className='text-small'>
-							The cost is approximate, download our mobile application to place
-							an order. Collect points on your loyalty card and enjoy your
-							favorite coffee with up to 20% discount.
-						</p>
-						<span className={`${styles.button} text`} onClick={handleCancel}>
-							Close
-						</span>
+		<>
+			<Head>
+				<body className={open ? 'modal__show' : ''} />
+			</Head>
+			<div className={`${styles.modal} ${open ? styles.modal_show : ''}`}>
+				<div className={styles.wrapper}>
+					<div className={styles.content}>
+						{children}
+						<div className={styles.caption}>
+							<IoIosInformationCircleOutline size={16} />
+							<p className='text-small'>
+								The cost is approximate, download our mobile application to
+								place an order. Collect points on your loyalty card and enjoy
+								your favorite coffee with up to 20% discount.
+							</p>
+							<span className={`${styles.button} text`} onClick={handleCancel}>
+								Close
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	)
 }
 
