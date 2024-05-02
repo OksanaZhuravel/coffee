@@ -122,3 +122,30 @@ body {
 		display: none;
 	}
 }
+
+.loading {
+	padding: 100px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	// height: 100vh;
+	color: var(--text-dark);
+}
+.spinner {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: 3px solid var(--text-dark);
+	border-top: 3px solid var(--text-accent);
+	animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
