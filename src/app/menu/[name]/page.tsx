@@ -12,7 +12,7 @@ export default function MenuPage({ params }: { params: { name: string } }) {
 	// console.log(name)
 
 	useEffect(() => {
-		fetch(`https://coffee-delta-two.vercel.app/api/menu/${name}`, {
+		fetch(`/api/menu/${name}`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
