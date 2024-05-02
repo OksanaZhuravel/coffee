@@ -18,8 +18,16 @@ export default function MenuPage({ params }: { params: { name: string } }) {
 				'Content-Type': 'application/json',
 			},
 		})
-			.then((response) => response.json())
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok')
+				}
+				return response.json()
+			})
 			.then((data) => {
+				if (!data) {
+					throw new Error('Empty response or invalid JSON')
+				}
 				setItems(data.items)
 				setLoading(false)
 			})
