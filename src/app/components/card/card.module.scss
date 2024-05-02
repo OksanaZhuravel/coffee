@@ -1,11 +1,7 @@
 @import '../../styles/variables';
 .card {
 	max-width: 310px;
-	display: grid;
-	justify-content: center;
-	align-items: center;
-	justify-items: center;
-	gap: 20px;
+	height: 506px;
 	border: 1px solid var(--border-light);
 	border-radius: var(--border-radius);
 	overflow: hidden;
@@ -23,12 +19,17 @@
 }
 .body {
 	display: grid;
-	justify-items: flex-start;
-	align-items: center;
-	gap: 12px;
+	align-items: flex-start;
 	padding: 20px;
+	height: 196px;
 }
-
+.box {
+	display: grid;
+	gap: 12px;
+}
+.prise {
+	align-self: flex-end;
+}
 .text {
 	text-align: left;
 }

@@ -1,6 +1,4 @@
-import { CardProps } from '@/interface/interface'
-
-export const items: CardProps[] = [
+export const items = [
 	{
 		id: 1,
 		name: 'coffee',

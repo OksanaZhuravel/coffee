@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model MenuItem {
+  id        Int        @id @default(autoincrement())
+  name      String
+  src       String
+  title     String
+  text      String?
+  price     Float
+  sizes     Size[]
+  additives Additive[]
+
+  @@map(name: "menus")
+}
+
+model Size {
+  id        Int        @id @default(autoincrement())
+  text      String
+  count     Float
+  units     String
+  menuItems MenuItem[]
+
+  @@map(name: "sizes")
+}
+
+model Additive {
+  id        Int        @id @default(autoincrement())
+  text      String
+  menuItems MenuItem[]
+
+  @@map(name: "additives")
+}

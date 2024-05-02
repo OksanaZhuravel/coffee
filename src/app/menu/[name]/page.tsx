@@ -1,28 +1,36 @@
-// export async function generateMetadata({ params, searchParams }: any) {
-// 	const post = await FetchData(params.id)
-// 	return {
-// 		title: post.title,
-// 		description: post.body,
-// 	}
+'use client'
+import CardList from '@/components/card/CardList'
+import { useEffect, useState } from 'react'
+import styles from './menupage.module.scss'
+// type Params = {
+// 	name: string
 // }
-// async function FetchData(name: string) {
-// 	const res = await fetch('http://localhost:3000/api/data' + name)
-// 	const result = await res.json()
-// 	console.log(result)
+export default function MenuPage({ params }: { params: { name: string } }) {
+	const [items, setItems] = useState([])
 
-// 	return result
-// }
-export default async function PageName({ params: { name } }: any) {
-	// const post = await FetchData(name)
-	// console.log(post)
+	const { name } = params
+	// console.log(name)
+
+	useEffect(() => {
+		fetch(`/api/menu/${name}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				setItems(data.items)
+			})
+			.catch((error) => {
+				console.error('Error:', error)
+			})
+	}, [params])
+	console.log(items)
 
 	return (
-		<div>
-			name
-			{name}
-			{/* <span>{name}</span>
-			{name.title}
-			{name.body} */}
+		<div className={styles.container}>
+			<CardList items={items} />
 		</div>
 	)
 }

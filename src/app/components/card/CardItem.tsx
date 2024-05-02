@@ -1,7 +1,10 @@
 import Input from '@/components/UI/Input/Input'
 import styles from '@/components/card/card.module.scss'
 import { interRegular } from '@/fonts'
-export default function CardItem() {
+import { CardProps } from '@/interface/interface'
+export default function CardItem({ items }: CardProps) {
+	console.log(items)
+
 	return (
 		<article className={styles.box}>
 			<h3 className={`${styles.subtitle} subtitle`}>Irish coffee</h3>

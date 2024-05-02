@@ -3,6 +3,7 @@ import Modal from '@/components/UI/Modal/Modal'
 import CardItem from '@/components/card/CardItem'
 import styles from '@/components/card/card.module.scss'
 import { inter, interRegular } from '@/fonts'
+import { CardProps } from '@/interface/interface'
 import Image from 'next/image'
 import { useState } from 'react'
 const formatter = new Intl.NumberFormat('en-US', {
@@ -10,7 +11,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 	currency: 'USD',
 })
 
-export default function CardList() {
+export default function CardList({ items }: CardProps) {
 	const [isModalOpen, setModalOpen] = useState(false)
 	const handleOpenModal = () => {
 		setModalOpen(true)
@@ -24,24 +25,31 @@ export default function CardList() {
 
 	return (
 		<>
-			<article className={styles.card} onClick={handleOpenModal}>
-				<Image
-					className={styles.img}
-					alt='coffee'
-					src='/image/coffee/coffee-1.jpg'
-					width={310}
-					height={310}
-				/>
-				<div className={`${inter.className} ${styles.body}`}>
-					<h3 className={`${styles.subtitle} subtitle`}>Irish coffee</h3>
-					<p className={`${interRegular.className} ${styles.text} text `}>
-						Fragrant black coffee with Jameson Irish whiskey and whipped milk
-					</p>
-					<p className='subtitle'>{formatter.format(7)}</p>
-				</div>
-			</article>
+			{items.map((el) => (
+				<article className={styles.card} onClick={handleOpenModal} key={el.id}>
+					<Image
+						className={styles.img}
+						alt={el.title}
+						src={el.src}
+						width={310}
+						height={310}
+					/>
+					<div className={`${inter.className} ${styles.body}`}>
+						<div className={styles.box}>
+							<h3 className='subtitle'>{el.title}</h3>
+							<p className={`${interRegular.className} ${styles.text} text `}>
+								{el.text}
+							</p>
+						</div>
+						<p className={`${styles.prise} subtitle`}>
+							{formatter.format(el.price)}
+						</p>
+					</div>
+				</article>
+			))}
+
 			<Modal open={isModalOpen} onCancel={handleCloseModal}>
-				<CardItem />
+				<CardItem items={items} />
 			</Modal>
 		</>
 	)
