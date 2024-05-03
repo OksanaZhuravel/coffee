@@ -1,14 +1,14 @@
 import styles from '@/components/card/card.module.scss'
 import { interRegular } from '@/fonts'
 import { ItemProps } from '@/interface/interface'
+import { formatter } from '@/utils/formatter'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { useState } from 'react'
 import Input from '../UI/Input/Input'
-import { formatter } from '@/utils/formatter'
 
 export default function CardItem({ item }: { item: ItemProps }) {
-	// console.log(item)
+	console.log(item)
 	const [selectedSize, setSelectedSize] = useState<string | null>(null)
 	const [selectedAdditive, setSelectedAdditive] = useState<string[]>([])
 	const toggleAdditive = (additive: string) => {
