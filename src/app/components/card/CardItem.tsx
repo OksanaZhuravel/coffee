@@ -1,16 +1,27 @@
 import styles from '@/components/card/card.module.scss'
 import { interRegular } from '@/fonts'
 import { ItemProps } from '@/interface/interface'
+import clsx from 'clsx'
 import Image from 'next/image'
+import { useState } from 'react'
 import Input from '../UI/Input/Input'
+import { formatter } from '@/utils/formatter'
 
 export default function CardItem({ item }: { item: ItemProps }) {
 	// console.log(item)
-
+	const [selectedSize, setSelectedSize] = useState<string | null>(null)
+	const [selectedAdditive, setSelectedAdditive] = useState<string[]>([])
+	const toggleAdditive = (additive: string) => {
+		setSelectedAdditive((prev) =>
+			prev.includes(additive)
+				? prev.filter((item) => item !== additive)
+				: [...prev, additive]
+		)
+	}
 	return (
 		<article className={styles.wrap}>
 			<Image
-				className={styles.img}
+				className={styles.image}
 				alt={item.title}
 				src={item.src}
 				width={310}
@@ -23,43 +34,60 @@ export default function CardItem({ item }: { item: ItemProps }) {
 				</p>
 				<form action='#' className={styles.form}>
 					<div className={styles.size}>
-						<p className={`${interRegular.className}text`}>Size</p>
-						<div className={styles.options}>
+						<p className={`${interRegular.className} text`}>Size</p>
+						<div className={styles.list}>
 							{item.sizes.map((size) => (
-								<div key={size.id} onClick={() => console.log('click')}>
+								<div
+									className={styles.item}
+									key={size.id}
+									onClick={() => setSelectedSize(size.text)}
+								>
 									<Input
 										className={styles.input}
 										type='radio'
 										value={size.text}
 										id={size.text}
 										name='size'
-										// checked={selectedSize === size}
-										// onChange={() => console.log('click size')}
-										placeholder={size.text}
 									/>
-									<label htmlFor={size.text} className={styles.label}>
-										<span className='text'>{size.text}</span>
-										<span className='text'>{size.count}</span>
-										<span className='text'>{size.units}</span>
+									<label
+										htmlFor={size.text}
+										className={clsx(styles.label, {
+											[styles.active]: size.text === selectedSize,
+										})}
+									>
+										<span className={`${styles.account} text`}>
+											{size.text}
+										</span>
+										<span className='text'>
+											{size.count} {size.units}
+										</span>
 									</label>
 								</div>
 							))}
 						</div>
-						<div className={styles.options}>
+					</div>
+					<div className={styles.additive}>
+						<p className={`${interRegular.className} text`}>Additives</p>
+						<div className={styles.list}>
 							{item.additives.map((additive, index) => (
-								<div key={additive.id} onClick={() => console.log('click')}>
+								<div className={styles.item} key={additive.id}>
 									<Input
 										className={styles.input}
 										type='checkbox'
 										value={additive.text}
 										id={additive.text}
 										name='additive'
-										// checked={selectedSize === size}
-										// onChange={() => console.log('click size')}
-										placeholder={additive.text}
 									/>
-									<label htmlFor={additive.text} className={styles.label}>
-										<span className='text'>{index + 1}</span>
+									<label
+										htmlFor={additive.text}
+										className={clsx(styles.label, {
+											[styles.active]: selectedAdditive.includes(additive.text),
+										})}
+										onClick={() => toggleAdditive(additive.text)}
+									>
+										<span className={`${styles.account} text`}>
+											{index + 1}
+										</span>
 										<span className='text'>{additive.text}</span>
 									</label>
 								</div>
@@ -67,6 +95,10 @@ export default function CardItem({ item }: { item: ItemProps }) {
 						</div>
 					</div>
 				</form>
+				<div className={`${styles.total} subtitle`}>
+					<span>Total:</span>
+					<span>{formatter.format(item.price)}</span>
+				</div>
 			</div>
 		</article>
 	)

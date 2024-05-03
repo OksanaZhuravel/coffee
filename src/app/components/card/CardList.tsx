@@ -4,12 +4,9 @@ import CardItem from '@/components/card/CardItem'
 import styles from '@/components/card/card.module.scss'
 import { inter, interRegular } from '@/fonts'
 import { CardProps, ItemProps } from '@/interface/interface'
+import { formatter } from '@/utils/formatter'
 import Image from 'next/image'
 import { useState } from 'react'
-const formatter = new Intl.NumberFormat('en-US', {
-	style: 'currency',
-	currency: 'USD',
-})
 
 export default function CardList({ items }: CardProps) {
 	const [isModalOpen, setModalOpen] = useState(false)

@@ -1,15 +1,11 @@
 'use client'
 import { inter, interRegular } from '@/fonts'
+import { formatter } from '@/utils/formatter'
 import Image from 'next/image'
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './favorite.module.scss'
-
-const formatter = new Intl.NumberFormat('en-US', {
-	style: 'currency',
-	currency: 'USD',
-})
 
 const favoriteImages = [
 	{
