@@ -1,4 +1,5 @@
 'use client'
+import { menuLinks } from '@/api/data'
 import styles from '@/components/header/header.module.scss'
 import { NavBarProps } from '@/interface/interface'
 import clsx from 'clsx'
@@ -6,13 +7,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-
-const menuLinks = [
-	{ id: 1, link: '/#favorite', text: 'Favorite coffee' },
-	{ id: 2, link: '/#about', text: 'About' },
-	{ id: 3, link: '/#mobile', text: 'Mobile app' },
-	{ id: 4, link: '/#contacts', text: 'Contacts' },
-]
 
 export default function NavBarHome({ setIsMenuOpen }: NavBarProps) {
 	const path = usePathname()

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 
 import Subtitle from '@/components/subtitle/Subtitle'
-import styles from './layout.module.scss'
 
 export const metadata: Metadata = {
 	title: 'Coffee House | Menu',
@@ -14,7 +13,7 @@ export default function Layout({
 	children: React.ReactNode
 }>) {
 	return (
-		<section className={styles.menuPage}>
+		<section>
 			<Subtitle />
 			{children}
 		</section>

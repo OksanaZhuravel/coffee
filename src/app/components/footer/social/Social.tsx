@@ -1,30 +1,7 @@
+import { socialLinks } from '@/api/data'
 import styles from '@/components/footer/footer.module.scss'
-import FacebookIcon from '@/components/footer/social/icon/facebook'
-import InstagramIcon from '@/components/footer/social/icon/instagram'
-import TwitterIcon from '@/components/footer/social/icon/twitter'
 import Link from 'next/link'
 
-const socialLinks = [
-	{
-		id: 1,
-		link: 'https://twitter.com/',
-		text: 'twitter',
-		icon: TwitterIcon,
-	},
-	{
-		id: 2,
-		link: 'https://instagram.com/',
-		text: 'instagram',
-		icon: InstagramIcon,
-	},
-	{
-		id: 3,
-		link: 'https://facebook.com/',
-		text: 'facebook',
-		icon: FacebookIcon,
-		img: '/image/facebook.svg',
-	},
-]
 export default function Social() {
 	return (
 		<ul className={styles.list}>

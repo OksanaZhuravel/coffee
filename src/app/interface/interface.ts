@@ -40,3 +40,11 @@ export interface FavoriteItemProps {
 	textbox?: string
 	price: number
 }
+
+export type ImageObject = {
+	id: number
+	src: string
+	alt: string
+	width: number
+	height: number
+}

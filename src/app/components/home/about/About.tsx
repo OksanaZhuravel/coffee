@@ -1,74 +1,9 @@
 'use client'
 
+import { aboutImages } from '@/api/data'
+import { ImageObject } from '@/interface/interface'
 import Image from 'next/image'
 import styles from './about.module.scss'
-
-const aboutImages = [
-	{
-		id: 1,
-		src: '/image/about/about-1.jpg',
-		alt: 'Coffee',
-		width: 660,
-		height: 590,
-	},
-	{
-		id: 2,
-		src: '/image/about/about-2.jpg',
-		alt: 'Coffee',
-		width: 660,
-		height: 430,
-	},
-	{
-		id: 3,
-		src: '/image/about/about-3.jpg',
-		alt: 'Coffee',
-		width: 660,
-		height: 430,
-	},
-	{
-		id: 4,
-		src: '/image/about/about-4.jpg',
-		alt: 'Coffee',
-		width: 660,
-		height: 590,
-	},
-	// {
-	// 	id: 5,
-	// 	src: '/image/about/about-1.jpg',
-	// 	alt: 'Coffee',
-	// 	width: 660,
-	// 	height: 590,
-	// },
-	// {
-	// 	id: 6,
-	// 	src: '/image/about/about-2.jpg',
-	// 	alt: 'Coffee',
-	// 	width: 660,
-	// 	height: 430,
-	// },
-	// {
-	// 	id: 7,
-	// 	src: '/image/about/about-3.jpg',
-	// 	alt: 'Coffee',
-	// 	width: 660,
-	// 	height: 430,
-	// },
-	// {
-	// 	id: 8,
-	// 	src: '/image/about/about-4.jpg',
-	// 	alt: 'Coffee',
-	// 	width: 660,
-	// 	height: 590,
-	// },
-]
-
-type ImageObject = {
-	id: number
-	src: string
-	alt: string
-	width: number
-	height: number
-}
 
 export default function About() {
 	const imagesByColumn: { [key: number]: ImageObject[] } = aboutImages.reduce(

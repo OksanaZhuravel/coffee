@@ -1,23 +1,7 @@
-import Image from 'next/image'
+import { contactList } from '@/api/data'
 import styles from '@/components/footer/footer.module.scss'
+import Image from 'next/image'
 
-const contactList = [
-	{
-		id: 1,
-		text: '8558 Green Rd.,  LA',
-		img: '/image/icon/pin-alt.svg',
-	},
-	{
-		id: 2,
-		text: '+1 (603) 555-0123',
-		img: '/image/icon/phone.svg',
-	},
-	{
-		id: 3,
-		text: 'Mon-Sat: 9:00 AM – 23:00 PM',
-		img: '/image/icon/clock.svg',
-	},
-]
 export default function Contact() {
 	return (
 		<>
