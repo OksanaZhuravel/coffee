@@ -2,7 +2,7 @@
 
 .modal {
 	width: 100%;
-	max-width: 800px;
+	max-width: 342px;
 	min-height: fit-content;
 	display: flex;
 	justify-content: center;
@@ -12,10 +12,15 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	// padding: 16px;
-	transition: visibility 0.8s ease 0s;
+	transition: opacity 0.8s ease 0s, visibility 0.8s ease 0s;
 	visibility: hidden;
 	pointer-events: none;
+	@media (min-width: $mobile) {
+		max-width: 688px;
+	}
+	@media (min-width: $tablet) {
+		max-width: 800px;
+	}
 }
 
 .modal_show {
@@ -27,12 +32,20 @@
 	position: relative;
 }
 .content {
+	opacity: 0;
+	transition: opacity 0.6s ease-in 0s;
 	padding: 16px;
-	display: grid;
-	gap: 20px;
-	grid-template-columns: 310px 1fr;
 	background-color: var(--text-light);
 	border-radius: var(--border-radius);
+	@media (min-width: $mobile) {
+		display: grid;
+		grid-template-columns: 310px 1fr;
+		gap: 20px;
+	}
+	.modal_show & {
+		opacity: 1;
+		transition: opacity 0.6s ease-in 0.3s;
+	}
 }
 .caption {
 	position: relative;

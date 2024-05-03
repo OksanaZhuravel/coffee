@@ -30,13 +30,13 @@ export interface CardProps {
 	items: ItemProps[]
 }
 
-// export interface ItemsProps {
-// 	id: number
-// 	name: string
-// 	src: string
-// 	title: string
-// 	text: string
-// 	price: number
-// size: Size[]
-// additives: Additive[]
-// }
+export interface FavoriteItemProps {
+	id: number
+	width: number
+	height: number
+	src: string
+	title: string
+	text?: string
+	textbox?: string
+	price: number
+}

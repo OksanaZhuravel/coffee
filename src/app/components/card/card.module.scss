@@ -9,7 +9,7 @@
 .img {
 	object-fit: cover;
 	border-radius: var(--border-radius);
-	transition: all 0.6s ease 0s;
+	transition: all 0.6s ease-in 0s;
 
 	@media (any-hover: hover) {
 		&:hover {
@@ -37,14 +37,16 @@
 	display: grid;
 	grid-template-columns: 310px 1fr;
 	grid-column: 1 / 3;
+	gap: 20px;
 }
-.inner {
-	// display: grid;
-	padding-left: 20px;
-}
+
 .image {
+	display: none;
 	object-fit: cover;
 	border-radius: var(--border-radius);
+	@media (min-width: $mobile) {
+		display: block;
+	}
 }
 .subtitle {
 	&:not(:last-child) {
@@ -97,7 +99,7 @@
 	border-radius: var(--border-radius);
 	background-color: transparent;
 	border: 1px solid var(--border-light);
-	transition: all 0.6s ease 0s;
+	transition: all 0.6s ease-in 0s;
 	@media (any-hover: hover) {
 		&:hover {
 			background-color: var(--background-container);
@@ -123,7 +125,7 @@
 	height: 30px;
 	border-radius: 50%;
 	background-color: var(--border-light);
-	transition: all 0.6s ease 0s;
+	transition: all 0.6s ease-in 0s;
 	.active & {
 		background-color: var(--text-light);
 		color: var(--text-dark);

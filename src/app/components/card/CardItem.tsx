@@ -27,7 +27,7 @@ export default function CardItem({ item }: { item: ItemProps }) {
 				width={310}
 				height={310}
 			/>
-			<div className={`${styles.inner}`}>
+			<div>
 				<h3 className={`${styles.subtitle} subtitle`}>{item.title}</h3>
 				<p className={`${interRegular.className} ${styles.text} text`}>
 					{item.text}

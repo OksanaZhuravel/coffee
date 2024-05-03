@@ -146,7 +146,7 @@ export const items = [
 	{
 		id: 9,
 		name: 'tea',
-		src: '/image/tea/tea-1.jpg',
+		src: '/image/tea/tea-1.png',
 		title: 'Moroccan',
 		text: 'Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint',
 		price: 4.5,
@@ -164,7 +164,7 @@ export const items = [
 	{
 		id: 10,
 		name: 'tea',
-		src: '/image/tea/tea-2.jpg',
+		src: '/image/tea/tea-2.png',
 		title: 'Ginger',
 		text: 'Original black tea with fresh ginger, lemon and honey',
 		price: 5,
@@ -182,7 +182,7 @@ export const items = [
 	{
 		id: 11,
 		name: 'tea',
-		src: '/image/tea/tea-3.jpg',
+		src: '/image/tea/tea-3.png',
 		title: 'Cranberry',
 		text: 'Invigorating black tea with cranberry and honey',
 		price: 5,
@@ -200,7 +200,7 @@ export const items = [
 	{
 		id: 12,
 		name: 'tea',
-		src: '/image/tea/tea-4.jpg',
+		src: '/image/tea/tea-4.png',
 		title: 'Sea buckthorn',
 		text: 'Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon',
 		price: 5.5,
@@ -218,7 +218,7 @@ export const items = [
 	{
 		id: 13,
 		name: 'dessert',
-		src: '/image/dessert/dessert-1.jpg',
+		src: '/image/dessert/dessert-1.png',
 		title: 'Marble cheesecake',
 		text: 'Philadelphia cheese with lemon zest on a light sponge cake and red currant jam',
 		price: 3.5,
@@ -237,7 +237,7 @@ export const items = [
 	{
 		id: 14,
 		name: 'dessert',
-		src: '/image/dessert/dessert-2.jpg',
+		src: '/image/dessert/dessert-2.png',
 		title: 'Red velvet',
 		text: 'Layer cake with cream cheese frosting',
 		price: 4,
@@ -255,7 +255,7 @@ export const items = [
 	{
 		id: 15,
 		name: 'dessert',
-		src: '/image/dessert/dessert-3.jpg',
+		src: '/image/dessert/dessert-3.png',
 		title: 'Cheesecakes',
 		text: 'Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar',
 		price: 4.5,
@@ -273,7 +273,7 @@ export const items = [
 	{
 		id: 16,
 		name: 'dessert',
-		src: '/image/dessert/dessert-4.jpg',
+		src: '/image/dessert/dessert-4.png',
 		title: 'Creme brulee',
 		text: 'Delicate creamy dessert in a caramel basket with wild berries',
 		price: 4,
@@ -291,7 +291,7 @@ export const items = [
 	{
 		id: 17,
 		name: 'dessert',
-		src: '/image/dessert/dessert-5.jpg',
+		src: '/image/dessert/dessert-5.png',
 		title: 'Pancakes',
 		text: 'Tender pancakes with strawberry jam and fresh strawberries',
 		price: 4.5,
@@ -309,7 +309,7 @@ export const items = [
 	{
 		id: 18,
 		name: 'dessert',
-		src: '/image/dessert/dessert-6.jpg',
+		src: '/image/dessert/dessert-6.png',
 		title: 'Honey cake',
 		text: 'Classic honey cake with delicate custard',
 		price: 4.5,
@@ -327,7 +327,7 @@ export const items = [
 	{
 		id: 19,
 		name: 'dessert',
-		src: '/image/dessert/dessert-7.jpg',
+		src: '/image/dessert/dessert-7.png',
 		title: 'Chocolate cake',
 		text: 'Cake with hot chocolate filling and nuts with dried apricots',
 		price: 5.5,
@@ -345,7 +345,7 @@ export const items = [
 	{
 		id: 20,
 		name: 'dessert',
-		src: '/image/dessert/dessert-8.jpg',
+		src: '/image/dessert/dessert-8.png',
 		title: 'Black forest',
 		text: 'A combination of thin sponge cake with cherry jam and light chocolate mousse',
 		price: 6.5,
@@ -361,3 +361,39 @@ export const items = [
 		],
 	},
 ]
+
+// const favoriteImages = [
+// 	{
+// 		id: 1,
+// 		src: '/image/slider/coffee-slider-1.png',
+// 		width: 480,
+// 		height: 480,
+// 		title: 'S’mores Frappuccino',
+// 		text: 'This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.',
+// 		textbox:
+// 			'Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.',
+// 		price: 5.5,
+// 	},
+// 	{
+// 		id: 2,
+// 		src: '/image/slider/coffee-slider-2.png',
+// 		width: 480,
+// 		height: 480,
+// 		title: 'Caramel Macchiato',
+// 		text: 'Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.',
+// 		textbox:
+// 			'Fragrant and unique classic espresso with rich caramel-peanut syrup, with the addition of delicate cream under whipped thick foam.',
+// 		price: 5.0,
+// 	},
+// 	{
+// 		id: 3,
+// 		src: '/image/slider/coffee-slider-3.png',
+// 		width: 480,
+// 		height: 480,
+// 		title: 'Ice coffee',
+// 		text: 'A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.',
+// 		textbox:
+// 			'A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.',
+// 		price: 4.5,
+// 	},
+// ]

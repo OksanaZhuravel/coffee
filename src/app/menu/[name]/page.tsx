@@ -2,7 +2,7 @@
 import CardList from '@/components/card/CardList'
 import { Suspense, useEffect, useState } from 'react'
 
-import Loading from '../loading'
+import Loading from '@/loading'
 import styles from './page.module.scss'
 
 export default function MenuPage({ params }: { params: { name: string } }) {
