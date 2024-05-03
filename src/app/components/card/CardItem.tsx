@@ -8,7 +8,7 @@ import { useState } from 'react'
 import Input from '../UI/Input/Input'
 
 export default function CardItem({ item }: { item: ItemProps }) {
-	console.log(item)
+	// console.log(item)
 	const [selectedSize, setSelectedSize] = useState<string | null>(null)
 	const [selectedAdditive, setSelectedAdditive] = useState<string[]>([])
 	const toggleAdditive = (additive: string) => {
