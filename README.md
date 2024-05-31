@@ -18,7 +18,5 @@ Backend:
 Prisma,
 Postgres Database
 
-Проект опубликован на Netlify и доступен по ссылкам:
-https://house-coffee-2024.netlify.app/
-или на Vercel
+Проект опубликован на Vercel и доступен по ссылке:
 https://coffee-delta-two.vercel.app/
