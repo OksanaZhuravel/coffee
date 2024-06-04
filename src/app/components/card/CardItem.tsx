@@ -9,7 +9,9 @@ import Input from '../UI/Input/Input'
 
 export default function CardItem({ item }: { item: ItemProps }) {
 	// console.log(item)
-	const [selectedSize, setSelectedSize] = useState<string | null>(null)
+	const [selectedSize, setSelectedSize] = useState<string | null>(
+		item.sizes[0].text
+	)
 	const [selectedAdditive, setSelectedAdditive] = useState<string[]>([])
 	const toggleAdditive = (additive: string) => {
 		setSelectedAdditive((prev) =>
@@ -18,6 +20,7 @@ export default function CardItem({ item }: { item: ItemProps }) {
 				: [...prev, additive]
 		)
 	}
+
 	return (
 		<article className={styles.wrap}>
 			<Image

@@ -19,6 +19,7 @@ export default function CardList({ items }: CardProps) {
 
 	const handleCloseModal = () => {
 		setModalOpen(false)
+			setSelectedItem(null)
 		// console.log('handleCloseModal')
 	}
 
